@@ -2,6 +2,8 @@
 import customtkinter as ctk
 # Import random so we can pick a random motivational quote
 import random
+import os
+from playsound3 import playsound
 
 # Set the whole app to dark mode (dark background, light text)
 ctk.set_appearance_mode("dark")
@@ -120,6 +122,8 @@ def tick():
     # If the countdown has reached zero (or gone below), switch phases
     if remaining <= 0:
         if phase == "work":
+            if os.path.exists("LockIn.wav"): # Checks if sound exists
+                playsound("LockIn.wav") # Plays it if it does
             # Work just ended → switch to rest
             phase = "rest"
             remaining = REST_SECONDS
@@ -128,6 +132,8 @@ def tick():
         else:
             # Rest just ended → switch back to work
             phase = "work"
+            if os.path.exists("LockIn.wav"): # Checks if sound exists
+                playsound("LockIn.wav") # Plays it if it does
             remaining = WORK_SECONDS
             # Change the label back to "Work Time" and make it white
             time_type.configure(text="Work Time", text_color="white")
