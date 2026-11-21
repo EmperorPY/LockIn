@@ -30,7 +30,7 @@ LockIn is a clean, distraction-free desktop study timer built with CustomTkinter
    ```bash
    pip install customtkinter playsound3
    ```
-3. Place a sound file named `LockIn.wav` in the same folder as `lockin.py`. If the file is missing, the timer will still work — it just won't play a sound.
+3. Place a sound file and a json file named `LockIn.wav` and quotes.json in the same folder as `lockin.py`. If the file is missing, the timer will still work — it just won't play a sound or generate motivational contnet.
 4. Run the file:
    ```bash
    python lockin.py
